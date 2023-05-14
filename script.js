@@ -42,6 +42,24 @@
 	    contador.innerHTML = restante;
 	}
 
+	input.addEventListener("input", function() {
+      // Obtener la altura del scroll del textarea
+      let scrollHeight = input.scrollHeight;
+
+      // Asignar la altura del scroll al estilo height del textarea
+      input.style.height = scrollHeight + "px";
+    })
+
+input.addEventListener("input", function() {
+      // Obtener el valor del textarea
+      let texto = input.value;
+      // Reemplazar los caracteres que no sean letras minúsculas por una cadena vacía
+      texto = texto.replace(/[^a-z]+/g, "");
+      alert("Solo se aceptan letras minúsculas y sin acento")
+      // Asignar el nuevo valor al textarea
+      input.value = texto;
+    });
+
 	function remplazarCaracter(caracter,posicion){
 
 		switch(caracter){

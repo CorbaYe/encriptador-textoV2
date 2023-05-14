@@ -1,6 +1,6 @@
 
  body {
- 	
+
  	font-family: 'Montserrat', sans-serif;
  	background-color: #eceff1;
 }
@@ -28,8 +28,6 @@
 	display: inline-block;
 }
 .contenedor-textarea{
-	overflow-y: scroll;
-    scroll-behavior: smooth;
     width: 86%;
     height: 250px;
     margin: 30px 30px;
@@ -37,7 +35,17 @@
 }
 .seccion-izquierda textarea{
 	width: 85%;
+	background: transparent;
+    resize: none; /* quita el indicador de redimensionamiento */
+    border: none; /* quita todos los bordes */
+    outline: none; /* quita el contorno que aparece al enfocar el textarea */
+    border-bottom: 1px solid black; /* agrega un borde inferior de color negro */
+    min-height: 20px; /* altura mínima */
+    max-height: 250px; /* altura máxima */
+    overflow: auto; /* mostrar la barra de desplazamiento */
+    font-size: 16px;
 }
+
 
 .botones{
 	padding: 0 0 0 40px;
