@@ -28,6 +28,7 @@
 	*contarCaracteres
 	*mostrarOcultos
 	*copiarTexto
+	*evento: addEventListener
 	*
 	*/
 	  function contarCaracteres() {
@@ -43,22 +44,19 @@
 	}
 
 	input.addEventListener("input", function() {
-      // Obtener la altura del scroll del textarea
-      let scrollHeight = input.scrollHeight;
+      //configuración del scroll del textarea
+      let alturaScroll = input.scrollHeight
+      input.style.height = alturaScroll + "px"
 
-      // Asignar la altura del scroll al estilo height del textarea
-      input.style.height = scrollHeight + "px";
+      //minusculas sin acentos
+      let texto = input.value
+      texto = texto.replace(/[^a-z-" "-'?'-'¿'-'!'-'¡'-','-'.'-':'-';']+/g, "")
+      if (input.value != texto) {
+      	input.value = texto
+      	alert("Solo se permiten letras minúsculas sin acento.")
+      }
+      
     })
-
-input.addEventListener("input", function() {
-      // Obtener el valor del textarea
-      let texto = input.value;
-      // Reemplazar los caracteres que no sean letras minúsculas por una cadena vacía
-      texto = texto.replace(/[^a-z]+/g, "");
-      alert("Solo se aceptan letras minúsculas y sin acento")
-      // Asignar el nuevo valor al textarea
-      input.value = texto;
-    });
 
 	function remplazarCaracter(caracter,posicion){
 
